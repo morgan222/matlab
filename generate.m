@@ -1,0 +1,27 @@
+function [ X ] = generate( b, fill_factor )
+% generate takes a 1 by n matrix and randomly fills it with either player 1
+% or player 2's pieces
+
+player = 1;
+max = length(b);
+
+for i = 1:max*fill_factor
+   square = randi(max);
+   if (b(square) == 0) 
+       
+       b(square) = player;
+       
+       if (player == 1)
+           
+           player = 2;
+       else
+            player =1;
+       end
+              
+    end
+end
+
+X = b;
+
+end
+
